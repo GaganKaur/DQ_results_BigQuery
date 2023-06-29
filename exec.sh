@@ -91,6 +91,11 @@ fi
 
 # Execute the Python script with the named parameters
 
+echo "Installing dependency: pip install google-cloud-dataplex"
+pip install google-cloud-dataplex
+echo "Installing dependency: pip install google-cloud-bigquery"
+pip install google-cloud-bigquery
+
 echo --key_loc "$key_loc" --datascan "$data_scan" --dataset "$data_set" --table "$table" --dataset_location "$data_set_loc"
 python dataplex_autodq_export_bq.py --key_loc "$key_loc" --datascan "$data_scan" --dataset "$data_set" --table "$table" --dataset_location "$data_set_loc"
 
