@@ -91,5 +91,6 @@ fi
 
 # Execute the Python script with the named parameters
 
-echo 'Running following commmand: python dataplex_autodq_export_bq.ipynb --key_loc "$key_loc" --datascan "$data_scan" --dataset "$data_set" --table "$table" --dataset_location "$data_set_loc"'
-#python dataplex_autodq_export_bq.ipynb --key_loc "$key_loc" --datascan "$data_scan" --dataset "$data_set" --table "$table" --dataset_location "$data_set_loc"
+echo --key_loc "$key_loc" --datascan "$data_scan" --dataset "$data_set" --table "$table" --dataset_location "$data_set_loc"
+python dataplex_autodq_export_bq.py --key_loc "$key_loc" --datascan "$data_scan" --dataset "$data_set" --table "$table" --dataset_location "$data_set_loc"
+
