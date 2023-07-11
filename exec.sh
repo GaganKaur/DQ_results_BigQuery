@@ -24,27 +24,27 @@ usage() {
 while [[ $# -gt 0 ]]; do
     key="$1"
     case $key in
-        --key-loc)
+        \-\-key-loc)
             key_loc="$2"
             shift
             shift
             ;;
-        --data-set)
+        \-\-data-set)
             data_set="$2"
             shift
             shift
             ;;
-        --data-scan)
+        \-\-data-scan)
             data_scan="$2"
             shift
             shift
             ;;
-        --table)
+        \-\-table)
             table="$2"
             shift
             shift
             ;;
-        --data-set-loc)
+        \-\-data-set-loc)
             data_set_loc="$2"
             shift
             shift
