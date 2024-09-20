@@ -1,0 +1,68 @@
+{
+  "rules": [
+    {
+      "nonNullExpectation": {},
+      "column": "customer_id",
+      "dimension": "COMPLETENESS",
+      "threshold": 1
+    },
+    {
+      "setExpectation": {
+        "values": [
+          "INR",
+          "USD"
+        ]
+      },
+      "column": "currency_id",
+      "ignoreNull": true,
+      "dimension": "VALIDITY",
+      "threshold": 1
+    },
+    {
+      "uniquenessExpectation": {},
+      "column": "transaction_id",
+      "dimension": "UNIQUENESS"
+    },
+    {
+      "rangeExpectation": {
+        "minValue": "0.00",
+        "maxValue": "100.00"
+      },
+      "column": "discount_pct",
+      "ignoreNull": true,
+      "dimension": "VALIDITY",
+      "threshold": 1
+    },
+    {
+      "rowConditionExpectation": {
+        "sqlExpression": "30 \u003c `discount_pct` AND `discount_pct` \u003c 50"
+      },
+      "column": "discount_pct",
+      "dimension": "VALIDITY",
+      "threshold": 1
+    },
+    {
+      "regexExpectation": {
+        "regex": "^\\d{8}[a-zA-Z]{16}$"
+      },
+      "column": "customer_id",
+      "ignoreNull": true,
+      "dimension": "VALIDITY",
+      "threshold": 1
+    },
+    {
+      "statisticRangeExpectation": {
+        "minValue": "0.0",
+        "maxValue": "500.0"
+      },
+      "column": "amount",
+      "dimension": "VALIDITY"
+    },
+    {
+      "tableConditionExpectation": {
+        "sqlExpression": "MIN(`discount_pct`)  \u003e 0"
+      },
+      "dimension": "VALIDITY"
+    }
+  ]
+}

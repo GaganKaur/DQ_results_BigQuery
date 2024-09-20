@@ -1,0 +1,22 @@
+rules:
+- nonNullExpectation: {}
+  column: client_id
+  dimension: COMPLETENESS
+  threshold: 1
+- setExpectation : 
+    values :
+    - 'M'
+    - 'F'
+  column : gender
+  ignoreNull : true
+  dimension : VALIDITY
+  threshold : 1
+- uniquenessExpectation: {}
+  column: client_id
+  dimension: UNIQUENESS
+- regexExpectation:
+    regex:  '(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$'
+  column : ssn
+  ignoreNull : true
+  dimension : VALIDITY
+  threshold : 1
